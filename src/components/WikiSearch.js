@@ -37,7 +37,7 @@ const WikiSearch = () => {
       <div key={result.pageid} className="item">
           <div className="right floated content">
               <a
-              className="ui button"
+              className="ui button green"
               href={`https://en.wikipedia.org?curid=${result.pageid}`}
               >Go</a>
           </div>
@@ -51,7 +51,7 @@ const WikiSearch = () => {
   });
 
   return (
-    <div>
+    <div className="ui container">
       <div className="ui form">
         <div className="field">
           <label className="">Search Wikipedia</label>
