@@ -1,4 +1,6 @@
-Learning react hooks. Widgets.
+Learning react hooks
+Widgets
+**in progress**
 
 __________________________________________________________________________________________________
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
