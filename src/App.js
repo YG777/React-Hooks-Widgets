@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ExpandingList from './components/ExpandingList'
-
+import WikiSearch from './components/WikiSearch'
 const listItems = [
   {
     title: 'What are promises?',
@@ -21,8 +21,8 @@ const App = () => {
   return (
     <div>
       <h1>Widgets</h1>
-        <ExpandingList listItems={listItems}/>
-        
+        {/* <ExpandingList listItems={listItems}/> */}
+        <WikiSearch/>
     </div>
   );
 }
