@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import ExpandingList from "./components/ExpandingList";
 import WikiSearch from "./components/WikiSearch";
 import DropDown from "./components/DropDown";
+import Translate from './components/Translate';
 
+//Expanding List______________
 const listItems = [
   {
     title: "What are promises?",
@@ -20,41 +22,54 @@ const listItems = [
   },
 ];
 
-const dropDownOptions = [
-  {
-    label: "Red color",
-    value: "red",
-  },
-  {
-    label: "Green color",
-    value: "green",
-  },
-  {
-    label: "Orange color",
-    value: "Orange",
-  },
-];
+//dropdowm________________________________
+
+// const dropDownOptions = [
+//   {
+//     label: "Red color",
+//     value: "red",
+//   },
+//   {
+//     label: "Green color",
+//     value: "green",
+//   },
+//   {
+//     label: "Orange color",
+//     value: "Orange",
+//   },
+// ];
+//EXPANDING LIST, DROPDOWN AND SEARCH HERE
+// const App = () => {
+//   const [selected, setSelected] = useState(dropDownOptions[0]);
+//   const [showDropDown, setShowDropDown] = useState(false);
+//   return (
+//     <div>
+//       <h1>Widgets</h1>
+//       {/* <ExpandingList listItems={listItems}/> */}
+//       {/* <WikiSearch/> */}
+//       <button 
+//       onClick={()=>setShowDropDown(!showDropDown)}
+//       >Toggle</button>
+//       {showDropDown?
+//     <DropDown
+//     selected={selected}
+//     dropDownOptions={dropDownOptions}
+//     onSelectedChange={setSelected}
+//   />:null
+//       }
+  
+//     </div>
+//   );
+// };
+// _________________________________________________
+
+//----Translate widget
 const App = () => {
-  const [selected, setSelected] = useState(dropDownOptions[0]);
-  const [showDropDown, setShowDropDown] = useState(false);
+  
   return (
     <div>
-      <h1>Widgets</h1>
-      {/* <ExpandingList listItems={listItems}/> */}
-      {/* <WikiSearch/> */}
-      <button 
-      onClick={()=>setShowDropDown(!showDropDown)}
-      >Toggle</button>
-      {showDropDown?
-    <DropDown
-    selected={selected}
-    dropDownOptions={dropDownOptions}
-    onSelectedChange={setSelected}
-  />:null
-      }
-  
+      <Translate/>
     </div>
   );
 };
-
 export default App;
