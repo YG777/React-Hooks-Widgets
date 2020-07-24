@@ -27,7 +27,7 @@ const Translate = () => {
 
   return (
     <div>
-      Translate
+     
       <div className="ui form">
         <div className="field">
           <label className="">Enter Text</label>
