@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import ExpandingList from "./components/ExpandingList";
 import WikiSearch from "./components/WikiSearch";
 import DropDown from "./components/DropDown";
-import Translate from './components/Translate';
+import Translate from "./components/Translate";
+import Route from "./components/Route";
+import Header from './components/Header';
 
 //Expanding List______________
 const listItems = [
@@ -22,23 +24,22 @@ const listItems = [
   },
 ];
 
-//dropdowm________________________________
-
-// const dropDownOptions = [
-//   {
-//     label: "Red color",
-//     value: "red",
-//   },
-//   {
-//     label: "Green color",
-//     value: "green",
-//   },
-//   {
-//     label: "Orange color",
-//     value: "Orange",
-//   },
-// ];
-//EXPANDING LIST, DROPDOWN AND SEARCH HERE
+//dropdown________________________________
+const dropDownOptions = [
+  {
+    label: "Red color",
+    value: "red",
+  },
+  {
+    label: "Green color",
+    value: "green",
+  },
+  {
+    label: "Orange color",
+    value: "Orange",
+  },
+];
+//______EXPANDING_LIST,_DROPDOWN_AND_SEARCH_HERE_____________
 // const App = () => {
 //   const [selected, setSelected] = useState(dropDownOptions[0]);
 //   const [showDropDown, setShowDropDown] = useState(false);
@@ -47,7 +48,7 @@ const listItems = [
 //       <h1>Widgets</h1>
 //       {/* <ExpandingList listItems={listItems}/> */}
 //       {/* <WikiSearch/> */}
-//       <button 
+//       <button
 //       onClick={()=>setShowDropDown(!showDropDown)}
 //       >Toggle</button>
 //       {showDropDown?
@@ -57,18 +58,48 @@ const listItems = [
 //     onSelectedChange={setSelected}
 //   />:null
 //       }
-  
+
 //     </div>
 //   );
 // };
 // _________________________________________________
 
-//----Translate widget
+//----Translate widget----------------
+// const App = () => {
+
+//   return (
+//     <div>
+//       <Translate/>
+//     </div>
+//   );
+// };
+// export default App;
+//-------------------------------------
+
+//__ALL_WIDGETS_WITH_NAVIGATION________
 const App = () => {
-  
+  const [selected, setSelected] = useState(dropDownOptions[0]);
+  const [showDropDown, setShowDropDown] = useState(false);
+
   return (
     <div>
-      <Translate/>
+      <Header/>
+      <Route path="/">
+        <ExpandingList listItems={listItems} />
+      </Route>
+      <Route path="/search">
+        <WikiSearch />
+      </Route>
+      <Route path="/dropdown">
+        <DropDown
+          selected={selected}
+          dropDownOptions={dropDownOptions}
+          onSelectedChange={setSelected}
+        />
+      </Route>
+      <Route path="/translate">
+        <Translate />
+      </Route>
     </div>
   );
 };
